@@ -11,7 +11,7 @@ email: vinitsoni357@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Hey, it's me, Vinit. This is my website, and here, feel free to explore
   and discover more about me!
-baseurl: "cybervinit.github.io" # the subpath of your site, e.g. /blog
+baseurl: "/cybervinit.github.io/" # the subpath of your site, e.g. /blog
 url: "http://cybervinit.com" # the base hostname & protocol for your site
 twitter_username: jekyllrb
 github_username:  cybervinit
