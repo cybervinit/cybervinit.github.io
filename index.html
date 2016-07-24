@@ -1,21 +1,148 @@
 <!DOCTYPE html>
-<html>
+<head>
+    <title>Vinit Soni</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya:400,900i" rel="stylesheet">
+    <style type="text/css">
+        body {
+            background-color: #BBDEFB;
+            font-family: 'Alegreya', serif;
+        }
+        .boxTitle {
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 900;
+        }
+        .introParagraph {
+            font-size: x-large;
+        }
+        .sectionBox {
+            box-shadow: 5px 5px 20px grey;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 20px;
+            background: #DCEDC8; /* url("https://placehold.it/1920x1080");*/
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            border-style: solid;
+            border-width: thin;
+            border-radius: 0px;
 
-    <head class="header">
-        <link rel="stylesheet" type="text/css" href="mainpagestyle.css">
-        <title>Vinit Soni</title>
-    </head>
+        }
+        .displayImgContainer {
+            padding: 0px;
+            width: 303px;
+            height: 404px;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+        .displayImage {
+            padding: 0px;
+            max-width: 296px;
+            max-height: 400px;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+        .row {
+            align-content: center;
+            align-items: center;
+        }
 
-    <body>
-        <div class="introSection">
-                <h1 class="introHeader"> Vinit Soni </h1>
-            <div class="introDesPic">
-            <div class="introImageDiv"><img src="images/display_picture_rr.jpg" class="displayPicture" alt="Display Image"><img/></div>
+        DIV.projectContain {
+            width: 250px;
+            height: 250px;
+            margin-left: 1%;
+            padding: 1%;
+            border-style: double;
+            border-width: thick;
+            border-radius: 50px;
+        }
 
+        DIV.projectImageContain {
+            width: 75%;
+            height: 75%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border-style: solid;
 
-                <div class="introContent">Hey, I'm Vinit Soni. You'll find out more about me here soon!
-                </div>
-            </div>
+        }
+
+        .projectImage {
+            width: auto;
+            height: 100%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .projectName {
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        /* Large desktops and laptops */
+        @media (min-width: 1200px) {
+
+        }
+
+        /* Landscape tablets and medium desktops */
+        @media (min-width: 992px) and (max-width: 1199px) {
+            P.col-sm-8.introParagraph {
+                margin-top: 7px;
+            }
+        }
+
+        /* Portrait tablets and small desktops */
+        @media (min-width: 768px) and (max-width: 991px) {
+            P.col-sm-8.introParagraph {
+                margin-top: 7px;
+            }
+        }
+
+        /* Landscape phones and portrait tablets */
+        @media (max-width: 767px) {
+            P.col-sm-8.introParagraph {
+
+                color: blue;
+                width: 5px;
+            }
+        }
+
+        /* Portrait phones and smaller */
+        @media (max-width: 480px) {
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sectionBox container">
+        <h1 class="boxTitle">Vinit Soni</h1>
+        <div class="row intro">
+            <img src="images/display_picture_rr.jpg" class="col-sm-3 displayImage img-fluid" alt="A Display Picture of Vinit Soni">
+            <p class="col-sm-8 introParagraph">Hey! Now, before I formally introduce myself, I would like to open up with a question. Have you ever felt like you can limitlessly express yourself? That's exactly how I feel when I have a computer in front of me. Every time I start to code, I always find that I develop new ways to overcome challenges and achieve goals on my list. Hence, I often find myself working on some type of project on the computer. Working on a diverse amount of platforms such as Java (also the Android Framework), Python, HTML/CSS, Javascript has enabled me to explore the endlessness of coding.Learn more about my skills and recent projects here.</p>
         </div>
-    </body>
-</html>
+    </div>
+
+    <div class="sectionBox container">
+        <h2 class="boxTitle" style="text-align: left;">Skills</h2>
+    </div>
+
+    <div class="sectionBox container">
+        <h2 class="boxTitle" style="text-align: left;">Projects</h2>
+        <div class="row">
+            <div class="col-sm-3 projectContain"><div class="projectImageContain"><img src="images/petly_image.png" class="projectImage"></div><h4 class="projectName">Petly.</h4></div>
+            <div class="col-sm-3 projectContain"><div class="projectImageContain"><img src="images/connect4_image.png" class="projectImage"></div><h4 class="projectName">Connect 4</h4></div>
+            <div class="col-sm-3">This is a box</div>
+            <div class="col-sm-3">This is a box</div>
+        </div>
+    </div>
+
+    <div class="sectionBox container">
+        <h2 class="boxTitle" style="text-align: left;">Contact Me</h2>
+    </div>
+</body>
