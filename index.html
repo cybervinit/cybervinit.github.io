@@ -3,6 +3,9 @@
     <title>Vinit Soni</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link href="https://fonts.googleapis.com/css?family=Alegreya:400,900i" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <style type="text/css">
         body {
             background-color: #BBDEFB;
@@ -54,13 +57,11 @@
         }
 
         DIV.projectContain {
-            width: 250px;
-            height: 250px;
-            margin-left: 1%;
+            height: 400px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
             padding: 1%;
-            border-style: double;
-            border-width: thick;
-            border-radius: 50px;
         }
 
         DIV.projectImageContain {
@@ -69,8 +70,6 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
-            border-style: solid;
-
         }
 
         .projectImage {
@@ -79,11 +78,17 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
+            border-style: ridge;
+            border-width: thick;
         }
 
         .projectName {
-            vertical-align: middle;
-            text-align: center;
+            align-self: center;
+            display: block;
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 25px;
         }
 
         /* Large desktops and laptops */
@@ -125,6 +130,16 @@
                 width: 60%;
                 height: auto;
                 border-radius: 30%;
+            }
+            DIV.projectContain {
+                height: 500px;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 1%;
+            }
+            .projectName {
+                font-size: 40px;
             }
         }
 
@@ -185,14 +200,63 @@
     <div class="sectionBox container-fluid">
         <h2 class="boxTitle" style="text-align: left;">Projects</h2>
         <div class="row">
-            <div class="col-sm-3 projectContain"><div class="projectImageContain"><img src="images/petly_image.png" class="projectImage"></div><h4 class="projectName">Petly.</h4></div>
-            <div class="col-sm-3 projectContain"><div class="projectImageContain"><img src="images/connect4_image.png" class="projectImage"></div><h4 class="projectName">Connect 4</h4></div>
-            <div class="col-sm-3">This is a box</div>
-            <div class="col-sm-3">This is a box</div>
+            <div class="col-md-6 col-sm-12 projectContain">
+                <div class="projectImageContain" >
+                    <img src="images/petly_image.png" class="projectImage" onmouseover="this.src='images/Petly_screen2.gif'" onmouseout="this.src='images/petly_image.png'">
+                </div>
+                <button class="btn btn-info projectName" data-toggle="modal" data-target="#petlyAppModal">
+                    <h4>Petly.</h4>
+                </button>
+            </div>
+            <div class="col-md-6 col-sm-12 projectContain">
+                <div class="projectImageContain">
+                    <img src="images/connect4_image.png" class="projectImage" onmouseover="this.src='images/connect_4_screen3.png'" onmouseout="this.src='images/connect4_image.png'" alt="Connect 4 game image">
+                </div>
+                <button class="btn btn-info projectName" data-toggle="modal" data-target="#connect4Modal">
+                    <h4>Connect 4</h4>
+                </button>
+            </div>
         </div>
     </div>
 
     <div class="sectionBox container-fluid">
         <h2 class="boxTitle" style="text-align: left;">Contact Me</h2>
     </div>
+
+    <!-- Petly App Modal -->
+    <div class="modal fade" id="petlyAppModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Petly Application</h4>
+                </div>
+                <div class="modal-body">
+                    <img class="img-responsive" src="images/petly_image.png">
+                    <p>This is the first Android based project I've done. It is an Android application targeting pet owners of Toronto. It's main purpose is to connect pet owners. It has soial and personal features such as statuses, setting reminders, making friends, finding nearby parks and vet clinics, and many more. It is built in affiliation with the Toronto Animal Services.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Connect 4 Modal -->
+    <div class="modal fade" id="connect4Modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Connect 4</h4>
+                </div>
+                <div class="modal-body">
+                    <img class="img-responsive" src="images/connect4_image.png">
+                    <p>This is a Java-based version of the classic Connect 4.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
