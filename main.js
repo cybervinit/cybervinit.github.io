@@ -748,7 +748,7 @@ var FeaturedComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".featured-exp-title {\n\tposition: absolute;\n\tright: 5%;\n\ttop: 50%;\n}\n\nimg {\n\twidth: 100vw;\n}\n\n.f-exp-container img {\n\tdisplay: block;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9ob21lLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Q0FDQyxtQkFBbUI7Q0FDbkIsVUFBVTtDQUNWLFNBQVM7Q0FDVDs7QUFFRDtDQUNDLGFBQWE7Q0FDYjs7QUFFRDtDQUNDLGVBQWU7Q0FDZiIsImZpbGUiOiJzcmMvYXBwL2hvbWUvaG9tZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmZlYXR1cmVkLWV4cC10aXRsZSB7XG5cdHBvc2l0aW9uOiBhYnNvbHV0ZTtcblx0cmlnaHQ6IDUlO1xuXHR0b3A6IDUwJTtcbn1cblxuaW1nIHtcblx0d2lkdGg6IDEwMHZ3O1xufVxuXG4uZi1leHAtY29udGFpbmVyIGltZyB7XG5cdGRpc3BsYXk6IGJsb2NrO1xufVxuIl19 */"
+module.exports = ".featured-exp-title {\n\tposition: absolute;\n\tright: 5%;\n\ttop: 70%;\n}\n\nimg {\n\twidth: 100vw;\n}\n\n.f-exp-container img {\n\tdisplay: block;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9ob21lLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Q0FDQyxtQkFBbUI7Q0FDbkIsVUFBVTtDQUNWLFNBQVM7Q0FDVDs7QUFFRDtDQUNDLGFBQWE7Q0FDYjs7QUFFRDtDQUNDLGVBQWU7Q0FDZiIsImZpbGUiOiJzcmMvYXBwL2hvbWUvaG9tZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmZlYXR1cmVkLWV4cC10aXRsZSB7XG5cdHBvc2l0aW9uOiBhYnNvbHV0ZTtcblx0cmlnaHQ6IDUlO1xuXHR0b3A6IDcwJTtcbn1cblxuaW1nIHtcblx0d2lkdGg6IDEwMHZ3O1xufVxuXG4uZi1leHAtY29udGFpbmVyIGltZyB7XG5cdGRpc3BsYXk6IGJsb2NrO1xufVxuIl19 */"
 
 /***/ }),
 
