@@ -759,7 +759,7 @@ module.exports = ".featured-exp-title {\n\tposition: absolute;\n\tright: 5%;\n\t
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<intro id=\"intro\"></intro>\n<a class=\"no-underline white\" href=\"/experiences/vancouver\">\n<div class=\"f-exp-container\">\n  <img src=\"https://lh3.googleusercontent.com/yW08haBAP1C6OV-ozYPKGs5M58Hf7OysylcuamuoFFjsAAGeS0HimSe73pE2FKaiSu6P_o-4C7LrDYeyrP5bwd0Hc9cbqL95iC47kXJ9wxj_XlkvypSW5lVZnl_fbk-dpURp_cr5MKhdMBA9wruh9Yy51qPh7ucE10LRe7jrIZNa-YFqvz2wOO18B_Y-OYrzo3MaifdCJ-jqdo38e4Qapht4EvokvoCa5lIWGS3KyyyjmZgnh6Nc9du_RlKiOh-f3uBgO1d0OjQC_BpP0DX9Foa965Sf3cfWpKfgY6fKUpVcrhQNANzj_hjy8sgZ2KMuyLYCPvre26LAzU0rg2qkzDpTv4LY4zoTBKhNE4ccwxlJ9kcsI6z6wNmqLJC3cKIF5BTlcbI2FK3Hd8gCI-o5GIMox-IvJjkqgZyt0RMUjDe5gBIFafOpPfy8K9nLWGuXL7eVGx2SCuOuT0T02mZsOGmMzR-5Dl2BoiTdPEmFIyAXJAGwr6pPKrZ8m6vLQNDKAUg9gEoO4klMMQXN0tTROffwKnAdCPEf-Xi3HlLnJb9KTyNO0RWRbBr9K_OXXOHDk76RrB0s1198fCvLPGSwE4OXUvkx2qoqipjCj_ThDjPCNXDNbpF0DsbcIWrUR7RpAXw5gjRyP4n05eT1uRrqbaoGLOeBaCWRTyuwTqm0H7s3Axk-Wlq91XfjpnsqCsIr0W5kwJHnVuemjrHmniPBYCI0cQ=w2166-h1626-no\">\n  <div class=\"featured-exp-title white f3 tc underline\">Vancouver 2k19\n  </div>\n</div>\n</a>\n<featured id=\"featured\"></featured>\n<projects id=\"projects\"></projects>\n<contactme id=\"contactme\"></contactme>\n\n"
+module.exports = "<intro id=\"intro\"></intro>\n<div class=\"f-exp-container\" (click)=\"goToVancouver()\">\n  <img src=\"https://lh3.googleusercontent.com/yW08haBAP1C6OV-ozYPKGs5M58Hf7OysylcuamuoFFjsAAGeS0HimSe73pE2FKaiSu6P_o-4C7LrDYeyrP5bwd0Hc9cbqL95iC47kXJ9wxj_XlkvypSW5lVZnl_fbk-dpURp_cr5MKhdMBA9wruh9Yy51qPh7ucE10LRe7jrIZNa-YFqvz2wOO18B_Y-OYrzo3MaifdCJ-jqdo38e4Qapht4EvokvoCa5lIWGS3KyyyjmZgnh6Nc9du_RlKiOh-f3uBgO1d0OjQC_BpP0DX9Foa965Sf3cfWpKfgY6fKUpVcrhQNANzj_hjy8sgZ2KMuyLYCPvre26LAzU0rg2qkzDpTv4LY4zoTBKhNE4ccwxlJ9kcsI6z6wNmqLJC3cKIF5BTlcbI2FK3Hd8gCI-o5GIMox-IvJjkqgZyt0RMUjDe5gBIFafOpPfy8K9nLWGuXL7eVGx2SCuOuT0T02mZsOGmMzR-5Dl2BoiTdPEmFIyAXJAGwr6pPKrZ8m6vLQNDKAUg9gEoO4klMMQXN0tTROffwKnAdCPEf-Xi3HlLnJb9KTyNO0RWRbBr9K_OXXOHDk76RrB0s1198fCvLPGSwE4OXUvkx2qoqipjCj_ThDjPCNXDNbpF0DsbcIWrUR7RpAXw5gjRyP4n05eT1uRrqbaoGLOeBaCWRTyuwTqm0H7s3Axk-Wlq91XfjpnsqCsIr0W5kwJHnVuemjrHmniPBYCI0cQ=w2166-h1626-no\">\n  <div class=\"featured-exp-title white f3 tc underline\">Vancouver 2k19\n  </div>\n</div>\n<featured id=\"featured\"></featured>\n<projects id=\"projects\"></projects>\n<contactme id=\"contactme\"></contactme>\n\n"
 
 /***/ }),
 
@@ -775,12 +775,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeComponent", function() { return HomeComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
 
 
 var HomeComponent = /** @class */ (function () {
-    function HomeComponent() {
+    function HomeComponent(router) {
+        this.router = router;
     }
     HomeComponent.prototype.ngOnInit = function () {
+    };
+    HomeComponent.prototype.goToVancouver = function () {
+        this.router.navigate(['/experiences/vancouver']);
     };
     HomeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -788,7 +794,7 @@ var HomeComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./home.component.html */ "./src/app/home/home.component.html"),
             styles: [__webpack_require__(/*! ./home.component.css */ "./src/app/home/home.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
     ], HomeComponent);
     return HomeComponent;
 }());
