@@ -598,7 +598,7 @@ module.exports = ".s-container {\n  display: block;\n}\n\n.s-featured-img {\n  w
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<iframe allowfullscreen class=\"vlog-player\" src=\"https://drive.google.com/file/d/1r7gehUVk7P9Zx27FR4doo8Zv59wsfJAa/preview\"></iframe>\n<section class=\"ns-container\">\n  <div class=\"content tc\" [style.bottom]=\"posBottom\" [style.right]=\"posRight\">\n      <h2 class=\"f1 b\">{{ exp.title ? exp.title : \"\" }}</h2>\n      <p class=\"tc f3\">{{ exp.caption ? exp.caption : \"\" }}</p>\n  </div>\n  <img class=\"ns-featured-img\" [src]=\"exp.momentList[0].imgSrc\">\n</section>\n\n<section class=\"s-container pv2\">\n  <div class=\"tc mv5\" [style.bottom]=\"posBottom\" [style.right]=\"posRight\">\n      <h2 class=\"f2 b\">{{ exp.title ? exp.title : \"\" }}</h2>\n      <p class=\"tc f4\">{{ exp.caption ? exp.caption : \"\" }}</p>\n  </div>\n  <div *ngFor=\"let p of exp.momentList\">\n      <img class=\"s-featured-img mt3 mb2\" [src]=\"p.imgSrc\">\n      <p class=\"f4 ml3 mr5 mv3\">{{ (!p.caption || p.caption === \"\") ? \"\" : p.caption }}</p>\n  </div>\n  <div class=\"flex justify-center f2\">\n      <button class=\"\"></button>\n  </div>\n</section>\n"
+module.exports = "<iframe allowfullscreen class=\"vlog-player\" src=\"https://drive.google.com/file/d/10STNa3jzFNDdK5AJgNvKFcQ80nY1ANTy/preview\"></iframe>\n<section class=\"ns-container\">\n  <div class=\"content tc\" [style.bottom]=\"posBottom\" [style.right]=\"posRight\">\n      <h2 class=\"f1 b\">{{ exp.title ? exp.title : \"\" }}</h2>\n      <p class=\"tc f3\">{{ exp.caption ? exp.caption : \"\" }}</p>\n  </div>\n  <img class=\"ns-featured-img\" [src]=\"exp.momentList[0].imgSrc\">\n</section>\n\n<section class=\"s-container pv2\">\n  <div class=\"tc mv5\" [style.bottom]=\"posBottom\" [style.right]=\"posRight\">\n      <h2 class=\"f2 b\">{{ exp.title ? exp.title : \"\" }}</h2>\n      <p class=\"tc f4\">{{ exp.caption ? exp.caption : \"\" }}</p>\n  </div>\n  <div *ngFor=\"let p of exp.momentList\">\n      <img class=\"s-featured-img mt3 mb2\" [src]=\"p.imgSrc\">\n      <p class=\"f4 ml3 mr5 mv3\">{{ (!p.caption || p.caption === \"\") ? \"\" : p.caption }}</p>\n  </div>\n  <div class=\"flex justify-center f2\">\n      <button class=\"\"></button>\n  </div>\n</section>\n"
 
 /***/ }),
 
@@ -1003,7 +1003,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/vinitsoni/main/personal_website/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /home/vinit/side/personal_website/src/main.ts */"./src/main.ts");
 
 
 /***/ })
