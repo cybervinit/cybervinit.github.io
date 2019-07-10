@@ -169,6 +169,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _experiences_experiences_module__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./experiences/experiences.module */ "./src/app/experiences/experiences.module.ts");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _piky_add_questions_component_piky_add_questions_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./piky-add-questions/component/piky-add-questions.component */ "./src/app/piky-add-questions/component/piky-add-questions.component.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _piky_add_questions_piky_service__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./piky-add-questions/piky.service */ "./src/app/piky-add-questions/piky.service.ts");
 
 
 
@@ -192,9 +195,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
 var routes = [
     { path: '', component: _home_home_component__WEBPACK_IMPORTED_MODULE_15__["HomeComponent"] },
-    { path: 'admin', component: _admin_admin_component__WEBPACK_IMPORTED_MODULE_14__["AdminComponent"] }
+    { path: 'admin', component: _admin_admin_component__WEBPACK_IMPORTED_MODULE_14__["AdminComponent"] },
+    { path: 'piqy', component: _piky_add_questions_component_piky_add_questions_component__WEBPACK_IMPORTED_MODULE_19__["default"] }
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -202,19 +209,21 @@ var AppModule = /** @class */ (function () {
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["NgModule"])({
             declarations: [
+                _admin_admin_component__WEBPACK_IMPORTED_MODULE_14__["AdminComponent"],
                 _app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"],
-                _intro_intro_component__WEBPACK_IMPORTED_MODULE_10__["IntroComponent"],
-                _projects_projects_component__WEBPACK_IMPORTED_MODULE_11__["ProjectsComponent"],
                 _contactme_contactme_component__WEBPACK_IMPORTED_MODULE_12__["ContactmeComponent"],
                 _featured_featured_component__WEBPACK_IMPORTED_MODULE_13__["FeaturedComponent"],
-                _admin_admin_component__WEBPACK_IMPORTED_MODULE_14__["AdminComponent"],
-                _home_home_component__WEBPACK_IMPORTED_MODULE_15__["HomeComponent"]
+                _home_home_component__WEBPACK_IMPORTED_MODULE_15__["HomeComponent"],
+                _intro_intro_component__WEBPACK_IMPORTED_MODULE_10__["IntroComponent"],
+                _piky_add_questions_component_piky_add_questions_component__WEBPACK_IMPORTED_MODULE_19__["default"],
+                _projects_projects_component__WEBPACK_IMPORTED_MODULE_11__["ProjectsComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_2__["BrowserAnimationsModule"],
                 _angular_common__WEBPACK_IMPORTED_MODULE_17__["CommonModule"],
                 _experiences_experiences_module__WEBPACK_IMPORTED_MODULE_16__["ExperiencesModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_20__["FormsModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_18__["HttpClientModule"],
                 _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_5__["MatToolbarModule"],
                 _angular_material_button__WEBPACK_IMPORTED_MODULE_6__["MatButtonModule"],
@@ -222,6 +231,7 @@ var AppModule = /** @class */ (function () {
                 ng2_scroll_to__WEBPACK_IMPORTED_MODULE_8__["ScrollToModule"].forRoot(),
                 _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forRoot(routes)
             ],
+            providers: [_piky_add_questions_piky_service__WEBPACK_IMPORTED_MODULE_21__["default"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"]],
             exports: [_angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"]]
         })
@@ -859,6 +869,130 @@ var IntroComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/piky-add-questions/component/piky-add-questions.component.html":
+/*!********************************************************************************!*\
+  !*** ./src/app/piky-add-questions/component/piky-add-questions.component.html ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"mh5 mt4\">\n  <div><input id=\"passField\" [(ngModel)]=\"pass\" placeholder=\"password\" type=\"password\" class=\"f3 mv2\"></div>\n  <input [(ngModel)]=\"questionText\" placeholder=\"question\" class=\"f3 mv2\">\n  <div *ngFor=\"let option of options;index as i\">\n    <p class=\"f4\">{{ option }}</p>\n    <button (click)=\"deleteOptionAt(i)\">remove</button>\n  </div>\n  <input id=\"newOptionField\" [(ngModel)]=\"newOption\" placeholder=\"option\" class=\"f3 mv2\">\n  <div class=\"mv3\"><button (click)=\"addOption()\">add</button></div>\n  <div class=\"mv3\"><button (click)=\"sendQuestion()\">SEND</button></div>\n  <div class=\"tc ma4 pa3 bg-green\" *ngIf=\"questionSendStatus === 'success'\">{{ questionSendStatus }}</div>\n  <div class=\"tc ma4 pa3 bg-gray\" *ngIf=\"questionSendStatus === 'neutral'\">{{ questionSendStatus }}</div>\n  <div class=\"tc ma4 pa3 bg-red\" *ngIf=\"questionSendStatus !== 'neutral' && questionSendStatus !== 'success'\">{{ questionSendStatus }}</div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/piky-add-questions/component/piky-add-questions.component.scss":
+/*!********************************************************************************!*\
+  !*** ./src/app/piky-add-questions/component/piky-add-questions.component.scss ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3Bpa3ktYWRkLXF1ZXN0aW9ucy9jb21wb25lbnQvcGlreS1hZGQtcXVlc3Rpb25zLmNvbXBvbmVudC5zY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/piky-add-questions/component/piky-add-questions.component.ts":
+/*!******************************************************************************!*\
+  !*** ./src/app/piky-add-questions/component/piky-add-questions.component.ts ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _piky_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../piky.service */ "./src/app/piky-add-questions/piky.service.ts");
+
+
+
+var PikyAddQuestionsComponent = /** @class */ (function () {
+    function PikyAddQuestionsComponent(pikyService) {
+        this.pikyService = pikyService;
+        this.options = [];
+        this.questionText = "";
+        this.newOption = "";
+        this.questionSendStatus = "neutral";
+    }
+    PikyAddQuestionsComponent.prototype.sendQuestion = function () {
+        var _this = this;
+        console.log(this.options);
+        var question = {};
+        question.questionText = this.questionText.replace(/oo/g, '{USER}');
+        question.options = this.options.map(function (o) { return { optionText: o }; });
+        console.log(question);
+        var s = this.pikyService.sendQuestion({ question: question, pass: this.pass })
+            .subscribe(function (resp) {
+            console.log(resp);
+            _this.questionSendStatus = resp.message;
+            if (resp.message === "success") {
+                document.getElementById("passField").value = '';
+            }
+            s.unsubscribe();
+        });
+    };
+    PikyAddQuestionsComponent.prototype.deleteOptionAt = function (i) {
+        this.options.splice(i, 1);
+    };
+    PikyAddQuestionsComponent.prototype.addOption = function () {
+        this.options.push(this.newOption);
+        document.getElementById("newOptionField").value = '';
+        document.getElementById("newOptionField").focus();
+        document.getElementById("newOptionField").select();
+    };
+    PikyAddQuestionsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'piky-add-questions.component.html',
+            template: __webpack_require__(/*! ./piky-add-questions.component.html */ "./src/app/piky-add-questions/component/piky-add-questions.component.html"),
+            styles: [__webpack_require__(/*! ./piky-add-questions.component.scss */ "./src/app/piky-add-questions/component/piky-add-questions.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_piky_service__WEBPACK_IMPORTED_MODULE_2__["default"]])
+    ], PikyAddQuestionsComponent);
+    return PikyAddQuestionsComponent;
+}());
+/* harmony default export */ __webpack_exports__["default"] = (PikyAddQuestionsComponent);
+
+
+/***/ }),
+
+/***/ "./src/app/piky-add-questions/piky.service.ts":
+/*!****************************************************!*\
+  !*** ./src/app/piky-add-questions/piky.service.ts ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../environments/environment */ "./src/environments/environment.ts");
+
+
+
+
+
+var PikyService = /** @class */ (function () {
+    function PikyService(http) {
+        this.http = http;
+        this.hostUrl = _environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].pikyApiUrl;
+    }
+    PikyService.prototype.sendQuestion = function (sendObj) {
+        return this.http.post(this.hostUrl + "/questions/new", tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"]({}, sendObj)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["take"])(1));
+    };
+    PikyService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+    ], PikyService);
+    return PikyService;
+}());
+/* harmony default export */ __webpack_exports__["default"] = (PikyService);
+
+
+/***/ }),
+
 /***/ "./src/app/projects/projects.component.css":
 /*!*************************************************!*\
   !*** ./src/app/projects/projects.component.css ***!
@@ -964,7 +1098,8 @@ __webpack_require__.r(__webpack_exports__);
 // `ng build --env=prod` then `environment.prod.ts` will be used instead.
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 var environment = {
-    production: false
+    production: false,
+    pikyApiUrl: "http://localhost:9000"
 };
 
 
