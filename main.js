@@ -608,7 +608,7 @@ module.exports = ".s-container {\n  display: block;\n}\n\n.s-featured-img {\n  w
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<iframe allowfullscreen class=\"vlog-player\" src=\"https://drive.google.com/file/d/10STNa3jzFNDdK5AJgNvKFcQ80nY1ANTy/preview\"></iframe>\n<section class=\"ns-container\">\n  <div class=\"content tc\" [style.bottom]=\"posBottom\" [style.right]=\"posRight\">\n      <h2 class=\"f1 b\">{{ exp.title ? exp.title : \"\" }}</h2>\n      <p class=\"tc f3\">{{ exp.caption ? exp.caption : \"\" }}</p>\n  </div>\n  <img class=\"ns-featured-img\" [src]=\"exp.momentList[0].imgSrc\">\n</section>\n\n<section class=\"s-container pv2\">\n  <div class=\"tc mv5\" [style.bottom]=\"posBottom\" [style.right]=\"posRight\">\n      <h2 class=\"f2 b\">{{ exp.title ? exp.title : \"\" }}</h2>\n      <p class=\"tc f4\">{{ exp.caption ? exp.caption : \"\" }}</p>\n  </div>\n  <div *ngFor=\"let p of exp.momentList\">\n      <img class=\"s-featured-img mt3 mb2\" [src]=\"p.imgSrc\">\n      <p class=\"f4 ml3 mr5 mv3\">{{ (!p.caption || p.caption === \"\") ? \"\" : p.caption }}</p>\n  </div>\n  <div class=\"flex justify-center f2\">\n      <button class=\"\"></button>\n  </div>\n</section>\n"
+module.exports = "<iframe allowfullscreen class=\"vlog-player\" src=\"https://drive.google.com/file/d/1r7gehUVk7P9Zx27FR4doo8Zv59wsfJAa/preview\"></iframe>\n<section class=\"ns-container\">\n  <div class=\"content tc\" [style.bottom]=\"posBottom\" [style.right]=\"posRight\">\n      <h2 class=\"f1 b\">{{ exp.title ? exp.title : \"\" }}</h2>\n      <p class=\"tc f3\">{{ exp.caption ? exp.caption : \"\" }}</p>\n  </div>\n  <img class=\"ns-featured-img\" [src]=\"exp.momentList[0].imgSrc\">\n</section>\n\n<section class=\"s-container pv2\">\n  <div class=\"tc mv5\" [style.bottom]=\"posBottom\" [style.right]=\"posRight\">\n      <h2 class=\"f2 b\">{{ exp.title ? exp.title : \"\" }}</h2>\n      <p class=\"tc f4\">{{ exp.caption ? exp.caption : \"\" }}</p>\n  </div>\n  <div *ngFor=\"let p of exp.momentList\">\n      <img class=\"s-featured-img mt3 mb2\" [src]=\"p.imgSrc\">\n      <p class=\"f4 ml3 mr5 mv3\">{{ (!p.caption || p.caption === \"\") ? \"\" : p.caption }}</p>\n  </div>\n  <div class=\"flex justify-center f2\">\n      <button class=\"\"></button>\n  </div>\n</section>\n"
 
 /***/ }),
 
@@ -876,7 +876,7 @@ var IntroComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"mh5 mt4\">\n  <div><input id=\"passField\" [(ngModel)]=\"pass\" placeholder=\"password\" type=\"password\" class=\"f3 mv2\"></div>\n  <input [(ngModel)]=\"questionText\" placeholder=\"question\" class=\"f3 mv2\">\n  <div *ngFor=\"let option of options;index as i\">\n    <p class=\"f4\">{{ option }}</p>\n    <button (click)=\"deleteOptionAt(i)\">remove</button>\n  </div>\n  <input id=\"newOptionField\" [(ngModel)]=\"newOption\" placeholder=\"option\" class=\"f3 mv2\">\n  <div class=\"mv3\"><button (click)=\"addOption()\">add</button></div>\n  <div class=\"mv3\"><button (click)=\"sendQuestion()\">SEND</button></div>\n  <div class=\"tc ma4 pa3 bg-green\" *ngIf=\"questionSendStatus === 'success'\">{{ questionSendStatus }}</div>\n  <div class=\"tc ma4 pa3 bg-gray\" *ngIf=\"questionSendStatus === 'neutral'\">{{ questionSendStatus }}</div>\n  <div class=\"tc ma4 pa3 bg-red\" *ngIf=\"questionSendStatus !== 'neutral' && questionSendStatus !== 'success'\">{{ questionSendStatus }}</div>\n</div>"
+module.exports = "<div class=\"mh5 mt4\">\n  <button (click)=\"addRandomQuestionsToDate()\">Automatically Add Random Questions</button>\n  <div><input id=\"passField\" [(ngModel)]=\"pass\" placeholder=\"password\" type=\"password\" class=\"f3 mv2\"></div>\n  <div><input [(ngModel)]=\"quesDate\" placeholder=\"dd-mm-yyyy\" class=\"f3 mv2\"></div>\n  <div><input [(ngModel)]=\"questionText\" placeholder=\"question\" class=\"f3 mv2\"></div>\n  <div *ngFor=\"let option of options;index as i\">\n    <p class=\"f4\">{{ option }}</p>\n    <button (click)=\"deleteOptionAt(i)\">remove</button>\n  </div>\n  <input id=\"newOptionField\" [(ngModel)]=\"newOption\" placeholder=\"option\" class=\"f3 mv2\">\n  <div class=\"mv3\"><button (click)=\"addOption()\">add</button></div>\n  <div class=\"mv3\"><button (click)=\"sendQuestion()\">SEND</button></div>\n  <div class=\"tc ma4 pa3 bg-green\" *ngIf=\"questionSendStatus === 'success'\">{{ questionSendStatus }}</div>\n  <div class=\"tc ma4 pa3 bg-gray\" *ngIf=\"questionSendStatus === 'neutral'\">{{ questionSendStatus }}</div>\n  <div class=\"tc ma4 pa3 bg-red\" *ngIf=\"questionSendStatus !== 'neutral' && questionSendStatus !== 'success'\">{{ questionSendStatus }}</div>\n</div>"
 
 /***/ }),
 
@@ -913,17 +913,19 @@ var PikyAddQuestionsComponent = /** @class */ (function () {
         this.questionText = "";
         this.newOption = "";
         this.questionSendStatus = "neutral";
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0');
+        var yyyy = today.getFullYear();
+        this.quesDate = dd + '-' + mm + '-' + yyyy;
     }
     PikyAddQuestionsComponent.prototype.sendQuestion = function () {
         var _this = this;
-        console.log(this.options);
         var question = {};
         question.questionText = this.questionText.replace(/oo/g, '{USER}');
         question.options = this.options.map(function (o) { return { optionText: o }; });
-        console.log(question);
-        var s = this.pikyService.sendQuestion({ question: question, pass: this.pass })
+        var s = this.pikyService.sendQuestion({ question: question, pass: this.pass, dateAdded: this.quesDate })
             .subscribe(function (resp) {
-            console.log(resp);
             _this.questionSendStatus = resp.message;
             if (resp.message === "success") {
                 document.getElementById("passField").value = '';
@@ -939,6 +941,14 @@ var PikyAddQuestionsComponent = /** @class */ (function () {
         document.getElementById("newOptionField").value = '';
         document.getElementById("newOptionField").focus();
         document.getElementById("newOptionField").select();
+    };
+    PikyAddQuestionsComponent.prototype.addRandomQuestionsToDate = function () {
+        var _this = this;
+        var subs = this.pikyService.addRandomQuestionsByDate({ todaysDate: this.quesDate })
+            .subscribe(function (resp) {
+            _this.questionSendStatus = resp.message;
+            subs.unsubscribe();
+        });
     };
     PikyAddQuestionsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -981,6 +991,9 @@ var PikyService = /** @class */ (function () {
     }
     PikyService.prototype.sendQuestion = function (sendObj) {
         return this.http.post(this.hostUrl + "/questions/new", tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"]({}, sendObj)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["take"])(1));
+    };
+    PikyService.prototype.addRandomQuestionsByDate = function (sendObj) {
+        return this.http.post(this.hostUrl + "/rooms/add-questions-at-date", sendObj).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["take"])(1));
     };
     PikyService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
@@ -1099,7 +1112,7 @@ __webpack_require__.r(__webpack_exports__);
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 var environment = {
     production: false,
-    pikyApiUrl: "http://localhost:9000"
+    pikyApiUrl: "https://api.piky.me"
 };
 
 
