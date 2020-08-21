@@ -773,7 +773,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "<div class=\"f5 b white ph3 pv3 tc\">Redirecting...</div>"
 
 /***/ }),
 
