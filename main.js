@@ -172,6 +172,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _piky_add_questions_component_piky_add_questions_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./piky-add-questions/component/piky-add-questions.component */ "./src/app/piky-add-questions/component/piky-add-questions.component.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _piky_add_questions_piky_service__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./piky-add-questions/piky.service */ "./src/app/piky-add-questions/piky.service.ts");
+/* harmony import */ var _goto_goto_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./goto/goto.component */ "./src/app/goto/goto.component.ts");
 
 
 
@@ -198,10 +199,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var routes = [
     { path: '', component: _home_home_component__WEBPACK_IMPORTED_MODULE_15__["HomeComponent"] },
     { path: 'admin', component: _admin_admin_component__WEBPACK_IMPORTED_MODULE_14__["AdminComponent"] },
-    { path: 'piqy', component: _piky_add_questions_component_piky_add_questions_component__WEBPACK_IMPORTED_MODULE_19__["default"] }
+    { path: 'piqy', component: _piky_add_questions_component_piky_add_questions_component__WEBPACK_IMPORTED_MODULE_19__["default"] },
+    { path: 'goto', component: _goto_goto_component__WEBPACK_IMPORTED_MODULE_22__["GotoComponent"] }
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -213,6 +216,7 @@ var AppModule = /** @class */ (function () {
                 _app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"],
                 _contactme_contactme_component__WEBPACK_IMPORTED_MODULE_12__["ContactmeComponent"],
                 _featured_featured_component__WEBPACK_IMPORTED_MODULE_13__["FeaturedComponent"],
+                _goto_goto_component__WEBPACK_IMPORTED_MODULE_22__["GotoComponent"],
                 _home_home_component__WEBPACK_IMPORTED_MODULE_15__["HomeComponent"],
                 _intro_intro_component__WEBPACK_IMPORTED_MODULE_10__["IntroComponent"],
                 _piky_add_questions_component_piky_add_questions_component__WEBPACK_IMPORTED_MODULE_19__["default"],
@@ -751,6 +755,63 @@ var FeaturedComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/goto/goto.component.css":
+/*!*****************************************!*\
+  !*** ./src/app/goto/goto.component.css ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2dvdG8vZ290by5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/goto/goto.component.html":
+/*!******************************************!*\
+  !*** ./src/app/goto/goto.component.html ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/goto/goto.component.ts":
+/*!****************************************!*\
+  !*** ./src/app/goto/goto.component.ts ***!
+  \****************************************/
+/*! exports provided: GotoComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GotoComponent", function() { return GotoComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var GotoComponent = /** @class */ (function () {
+    function GotoComponent() {
+    }
+    GotoComponent.prototype.ngOnInit = function () {
+        window.location.href = 'https://instagram.com/fnetisma';
+    };
+    GotoComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'goto',
+            template: __webpack_require__(/*! ./goto.component.html */ "./src/app/goto/goto.component.html"),
+            styles: [__webpack_require__(/*! ./goto.component.css */ "./src/app/goto/goto.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], GotoComponent);
+    return GotoComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/home/home.component.css":
 /*!*****************************************!*\
   !*** ./src/app/home/home.component.css ***!
@@ -1151,7 +1212,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/vinit/side/personal_website/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/vinitsoni/main/personal_website/src/main.ts */"./src/main.ts");
 
 
 /***/ })
